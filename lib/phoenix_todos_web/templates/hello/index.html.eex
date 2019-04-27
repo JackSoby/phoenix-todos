@@ -1,0 +1,12 @@
+<div>
+    <form action="/create-todo" method="POST">
+    <input type="hidden" name="_csrf_token" value="<%= @token %>">
+    <div class="todo-form">
+        Task: <input type="text" name="task"><br>
+        <input type="submit" value="Submit">
+    </div>
+    </form>
+    <%= for todo <- @todos do %>
+        <ul><%= todo.task %></ul>
+    <% end %>
+</div>
